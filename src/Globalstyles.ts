@@ -61,10 +61,6 @@ p, h1, h2, h3, h4, h5, h6 {
 #root, #__next {
   isolation: isolate;
 }
-
-/*
-  10. Fonts
-*/
 `;
 
 export default GlobalStyles;

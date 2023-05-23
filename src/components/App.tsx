@@ -1,17 +1,19 @@
-import React from 'react';
-import { AppWrapper } from './App.styled';
-import { ExtraInfo } from './extraInfo/ExtraInfo';
-import logo from './logo.svg';
-import { Quote } from './quote/Quote';
-import { TimeSection } from './timeSection/TimeSection';
-import { ToggleButton } from './toggleButton/ToggleButton';
+import React from "react";
+import { AppWrapper, ClockAndButtonSection } from "./App.styled";
+import { ExtraInfo } from "./extraInfo/ExtraInfo";
+import logo from "./logo.svg";
+import { Quote } from "./quote/Quote";
+import { TimeSection } from "./timeSection/TimeSection";
+import { ToggleButton } from "./toggleButton/ToggleButton";
 
 function App() {
   return (
-    <AppWrapper>
+    <AppWrapper time="night">
       <Quote />
-      <TimeSection />
-      <ToggleButton />
+      <ClockAndButtonSection>
+        <TimeSection />
+        <ToggleButton />
+      </ClockAndButtonSection>
       <ExtraInfo />
     </AppWrapper>
   );

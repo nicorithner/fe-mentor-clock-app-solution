@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
-import { COLOR } from "./constants";
-import { toRem } from "./mixins";
+import { createGlobalStyle } from 'styled-components';
+import { COLOR } from './constants';
+import { toRem } from './mixins';
 
 const GlobalStyles = createGlobalStyle`
 /*
@@ -31,7 +31,10 @@ html, body {
   5. Improve text rendering
 */
 body {
-  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${COLOR.nightRider};
   -webkit-font-smoothing: antialiased;
 }
 

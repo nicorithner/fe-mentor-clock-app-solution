@@ -1,12 +1,19 @@
 import React from 'react';
+import { AppWrapper } from './App.styled';
+import { ExtraInfo } from './extraInfo/ExtraInfo';
 import logo from './logo.svg';
+import { Quote } from './quote/Quote';
+import { TimeSection } from './timeSection/TimeSection';
+import { ToggleButton } from './toggleButton/ToggleButton';
 
 function App() {
   return (
-    <div>
-      <h1>"I'm strong to the finich, cause I eats me spinach, I'm Popeye the Sailor Man!"</h1>
-      <img src="popeye-spinach.png" alt="popeye"/>
-    </div>
+    <AppWrapper>
+      <Quote />
+      <TimeSection />
+      <ToggleButton />
+      <ExtraInfo />
+    </AppWrapper>
   );
 }
 

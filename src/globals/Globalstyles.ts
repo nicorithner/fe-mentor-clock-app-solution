@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { COLOR } from './constants';
 import { toRem } from './mixins';
 
 const GlobalStyles = createGlobalStyle`
@@ -34,7 +33,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${COLOR.nightRider};
+  background-color: hsl(0,0%,19%);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -86,7 +85,6 @@ h2 {
   line-height: ${toRem(68)};
   letter-spacing: 0px;
   text-align: left;
-  color: ${COLOR.nightRider};
 }
 
 h3 {
@@ -96,7 +94,6 @@ h3 {
   line-height: ${toRem(28)};
   letter-spacing: ${toRem(5)};
   text-align: left;
-  color: ${COLOR.black};
 }
 
 h4 {
@@ -106,7 +103,6 @@ h4 {
   line-height: ${toRem(28)};
   letter-spacing: ${toRem(4)};
   text-align: left;
-  color: ${COLOR.black};
 }
 
 h5 {
@@ -116,7 +112,6 @@ h5 {
   line-height: ${toRem(28)};
   letter-spacing: 0px;
   text-align: left;
-  color: ${COLOR.black};
 }
 
 h6 {
@@ -126,10 +121,7 @@ h6 {
   line-height: ${28};
   letter-spacing: ${toRem(3)};
   text-align: left;
-  color: ${COLOR.nightRider};
 }
-
-
 `;
 
 export default GlobalStyles;

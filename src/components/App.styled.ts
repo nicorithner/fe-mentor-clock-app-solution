@@ -3,18 +3,8 @@ import { toRem } from "../globals/mixins";
 import daytimeImage from "../assets/desktop/bg-image-daytime.jpg";
 import nightTimeImage from "../assets/desktop/bg-image-nighttime.jpg";
 
-type Props = {
-  time: string;
-};
-export const AppWrapper = styled.main<Props>`
-  ${(props) => {
-    switch (props.time) {
-      case "night":
-        return `background-image: url(${nightTimeImage});`;
-      default:
-        return `background-image: url(${daytimeImage});`;
-    }
-  }}
+export const AppWrapper = styled.main`
+  background-image: ${props => props.theme.backgroundImage};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,4 +15,5 @@ export const AppWrapper = styled.main<Props>`
 
 export const ClockAndButtonSection = styled.section`
   display: flex;
+  color: ${props => props.theme.color.clockGroup};
 `;

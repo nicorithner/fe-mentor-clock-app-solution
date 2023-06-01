@@ -1,10 +1,30 @@
-export const COLOR = {
-  black: "hsl(0,0%,0%)",
-  nightRider: "hsl(0,0%,19%)",
-  white: "hsl(0,0%,100%)",
-};
+import daytimeImage from "../assets/desktop/bg-image-daytime.jpg";
+import nightTimeImage from "../assets/desktop/bg-image-nighttime.jpg";
 
-export const TRANSPARENCY = {
-  black: "hsla(0,0%,0%, .75)",
-  white: "hsla(0,0%,100%, .75)",
-};
+  const black= "hsl(0,0%,0%)";
+  const nightRider= "hsl(0,0%,19%)";
+  const white= "hsl(0,0%,100%)";
+  const blackTranparency= "hsla(0,0%,0%, .75)";
+  const whiteTranparency= "hsla(0,0%,100%, .75)";
+
+export const DAYTHEME = {
+  backgroundImage: `url(${daytimeImage})`,
+  color: {
+  quote: `${black}`,
+  clockGroup: `${white}`,
+  label: `${nightRider}`,
+  info: `${black}`,
+  }
+
+}
+export const NIGHTTHEME = {
+  backgroundImage: `url(${nightTimeImage})`,
+  color: {
+  quote: `${white}`,
+  clockGroup: `${white}`,
+  bttnLabel: `${nightRider}`,
+  label: `${white}`,
+  info: `${white}`,
+  }
+}
+

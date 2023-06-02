@@ -10,7 +10,7 @@ import nightTimeImage from "../assets/desktop/bg-image-nighttime.jpg";
 export const DAYTHEME = {
   backgroundImage: `url(${daytimeImage})`,
   color: {
-  quote: `${black}`,
+  quote: `${white}`,
   clockGroup: `${white}`,
   label: `${nightRider}`,
   info: `${black}`,

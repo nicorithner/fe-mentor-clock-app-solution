@@ -1,3 +1,3 @@
 export const ToggleButton = () => {
-  return <h1>ToggleButton</h1>
+  return <h3>ToggleButton</h3>
 }

@@ -1,3 +1,3 @@
 export const ExtraInfo = () => {
-  return <h1>Time Detail</h1>
+  return <h3>Time Detail</h3>
 }

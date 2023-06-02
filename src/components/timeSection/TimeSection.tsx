@@ -1,3 +1,3 @@
 export const TimeSection = () => {
-  return <h1>Time Section</h1>
+  return <h3>Time Section</h3>
 }

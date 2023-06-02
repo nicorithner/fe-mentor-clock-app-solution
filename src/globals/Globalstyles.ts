@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import { toRem } from './mixins';
+import { createGlobalStyle } from "styled-components";
+import { toRem } from "./mixins";
 
 const GlobalStyles = createGlobalStyle`
 /*
@@ -75,7 +75,6 @@ h1 {
   font-weight: 700;
   line-height: ${toRem(200)};
   letter-spacing: ${toRem(-5)};
-  text-align: left;
 }
 
 h2 {
@@ -84,7 +83,6 @@ h2 {
   font-weight: 700;
   line-height: ${toRem(68)};
   letter-spacing: 0px;
-  text-align: left;
 }
 
 h3 {
@@ -93,7 +91,6 @@ h3 {
   font-weight: 700;
   line-height: ${toRem(28)};
   letter-spacing: ${toRem(5)};
-  text-align: left;
 }
 
 h4 {
@@ -102,7 +99,6 @@ h4 {
   font-weight: 400;
   line-height: ${toRem(28)};
   letter-spacing: ${toRem(4)};
-  text-align: left;
 }
 
 h5 {
@@ -111,7 +107,6 @@ h5 {
   font-weight: 700;
   line-height: ${toRem(28)};
   letter-spacing: 0px;
-  text-align: left;
 }
 
 h6 {
@@ -120,7 +115,14 @@ h6 {
   font-weight: 400;
   line-height: ${28};
   letter-spacing: ${toRem(3)};
-  text-align: left;
+}
+
+p {
+  font-family: Inter;
+  font-size: ${toRem(18)};
+  font-weight: 400;
+  line-height: ${toRem(28)};
+  letter-spacing: ${toRem(0)};
 }
 `;
 

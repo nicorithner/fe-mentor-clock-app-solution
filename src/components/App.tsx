@@ -1,21 +1,29 @@
+import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { DAYTHEME, NIGHTTHEME } from "../globals/constants";
-import { AppWrapper, ClockAndButtonSection } from "./App.styled";
+import { AppWrapper, SectionWrapper } from "./App.styled";
 import { ExtraInfo } from "./extraInfo/ExtraInfo";
 import { Quote } from "./quote/Quote";
 import { TimeSection } from "./timeSection/TimeSection";
 import { ToggleButton } from "./toggleButton/ToggleButton";
 
 function App() {
+  const [detailDisplay, setDetailDisplay] = useState("none");
+  const [quoteDisplay, setQuoteDisplay] = useState("flex");
+
   return (
     <ThemeProvider theme={NIGHTTHEME}>
       <AppWrapper>
-        <Quote />
-        <ClockAndButtonSection>
+        <SectionWrapper border={"red"} height={400} display={quoteDisplay}>
+          <Quote />
+        </SectionWrapper>
+        <SectionWrapper border={"lime"} height={400} display={"flex"}>
           <TimeSection />
           <ToggleButton />
-        </ClockAndButtonSection>
-        <ExtraInfo />
+        </SectionWrapper>
+        <SectionWrapper border={"hotpink"} height={400} display={detailDisplay}>
+          <ExtraInfo />
+        </SectionWrapper>
       </AppWrapper>
     </ThemeProvider>
   );

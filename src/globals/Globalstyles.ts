@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import { toRem } from './mixins';
+import { createGlobalStyle } from "styled-components";
+import { toRem } from "./mixins";
 
 const GlobalStyles = createGlobalStyle`
 /*
@@ -7,7 +7,7 @@ const GlobalStyles = createGlobalStyle`
 */
 *, *::before, *::after {
   box-sizing: border-box;
-  font-family: "Inter Variable", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 /*

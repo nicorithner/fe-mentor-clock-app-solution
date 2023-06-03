@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import { toRem } from "./mixins";
+import { createGlobalStyle } from 'styled-components';
+import { toRem } from './mixins';
 
 const GlobalStyles = createGlobalStyle`
 /*
@@ -7,7 +7,7 @@ const GlobalStyles = createGlobalStyle`
 */
 *, *::before, *::after {
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter Variable", sans-serif;
 }
 
 /*
@@ -70,15 +70,15 @@ p, h1, h2, h3, h4, h5, h6 {
   10. Typographic
 */
 h1 {
-  font-family: Inter Bold;
+  font-family: Inter;
   font-size: ${toRem(200)};
   font-weight: 700;
-  line-height: ${toRem(200)};
+  line-height: ${toRem(144)};
   letter-spacing: ${toRem(-5)};
 }
 
 h2 {
-  font-family: Inter Bold;
+  font-family: Inter;
   font-size: ${toRem(56)};
   font-weight: 700;
   line-height: ${toRem(68)};
@@ -86,7 +86,7 @@ h2 {
 }
 
 h3 {
-  font-family: Inter Bold;
+  font-family: Inter;
   font-size: ${toRem(24)};
   font-weight: 700;
   line-height: ${toRem(28)};
@@ -102,7 +102,7 @@ h4 {
 }
 
 h5 {
-  font-family: Inter Bold;
+  font-family: Inter;
   font-size: ${toRem(18)};
   font-weight: 700;
   line-height: ${toRem(28)};

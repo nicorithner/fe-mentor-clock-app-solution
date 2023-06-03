@@ -19,9 +19,12 @@ export const AppWrapper = styled.main`
 
 export const SectionWrapper = styled.section<Props>`
   display: ${(props) => props.display};
+  justify-content: space-between;
   color: ${(props) => props.theme.color.clockGroup};
   border: 2px ${(props) => props.border} solid;
   padding-top: ${toRem(56)};
+  padding-bottom: ${toRem(90)}
   padding-left: ${toRem(165)};
+  padding-right: ${toRem(165)};
   height: ${(props) => toRem(props.height)};
 `;

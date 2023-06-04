@@ -4,6 +4,7 @@ import { widthHeight } from "../../globals/mixins";
 const BaseSegment = styled.div`
   display: flex;
   justify-content: space-between;
+  z-index: 4;
 `;
 export const InfoSectionWrapper = styled(BaseSegment)`
   width: 100%;
@@ -28,5 +29,9 @@ export const VerticalDivider = styled.div`
   margin-right: 90px;
   margin-left: 90px;
 `;
-export const Label = styled.h6``;
-export const Info = styled.h2``;
+export const Label = styled.h6`
+  color: ${(props) => props.theme.color.label};
+`;
+export const Info = styled.h2`
+  color: ${(props) => props.theme.color.info};
+`;

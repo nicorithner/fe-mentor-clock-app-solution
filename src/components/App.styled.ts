@@ -9,10 +9,21 @@ type Props = {
 export const AppWrapper = styled.main`
   background-image: ${(props) => props.theme.backgroundImage};
   display: flex;
+  position: relative;
   flex-direction: column;
-  ${widthHeight(1400, 800)}
+  ${widthHeight(1440, 800)}
   max-width: ${toRem(1440)};
   max-height: ${toRem(800)};
+`;
+
+export const AppOverlay = styled.div`
+  position: absolute;
+  width: 1440px;
+  height: 800px;
+  background-color: ${(props) => props.theme.overlay};
+  top: 0;
+  left: 0;
+  z-index: 2;
 `;
 
 export const SectionWrapper = styled.section<Props>`
@@ -24,6 +35,7 @@ export const SectionWrapper = styled.section<Props>`
   padding-left: ${toRem(165)};
   padding-right: ${toRem(165)};
   height: ${(props) => toRem(props.height)};
+  z-index: 3;
 `;
 
 export const ExtraInfoWrapper = styled.section<Props>`
@@ -37,5 +49,5 @@ export const ExtraInfoWrapper = styled.section<Props>`
   padding-bottom: ${toRem(90)}
   padding-left: ${toRem(165)};
   padding-right: ${toRem(165)};
-
+  z-index: 3;
 `;

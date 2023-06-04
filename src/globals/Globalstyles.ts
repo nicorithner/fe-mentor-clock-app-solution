@@ -111,9 +111,8 @@ h5 {
 
 h6 {
   font-family: Inter;
-  font-size: ${15};
+  font-size: ${toRem(16)};
   font-weight: 400;
-  line-height: ${28};
   letter-spacing: ${toRem(3)};
 }
 

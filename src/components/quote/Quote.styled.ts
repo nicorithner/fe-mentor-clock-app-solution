@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { toRem } from "../../globals/mixins";
+import { toRem, widthHeight } from "../../globals/mixins";
 
 export const QuoteWrapper = styled.section`
   display: flex;
@@ -22,7 +22,6 @@ export const Author = styled.h5`
 `;
 
 export const Icon = styled.img`
-  width: ${toRem(17)};
-  height: ${toRem(17)};
   cursor: pointer;
+  ${widthHeight(17, 17)}
 `;

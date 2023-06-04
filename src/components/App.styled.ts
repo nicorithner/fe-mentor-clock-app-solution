@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { toRem } from "../globals/mixins";
+import { toRem, widthHeight } from "../globals/mixins";
 
 type Props = {
   border: string;
@@ -11,8 +11,7 @@ export const AppWrapper = styled.main`
   background-image: ${(props) => props.theme.backgroundImage};
   display: flex;
   flex-direction: column;
-  width: ${toRem(1440)};
-  height: ${toRem(800)};
+  ${widthHeight(1400, 800)}
   max-width: ${toRem(1440)};
   max-height: ${toRem(800)};
 `;

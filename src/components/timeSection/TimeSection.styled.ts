@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { toRem } from "../../globals/mixins";
+import { toRem, widthHeight } from "../../globals/mixins";
 
 export const TimeInfoWrapper = styled.section`
-  border: 1px solid orange;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -13,9 +12,8 @@ export const GreetingWrapper = styled.div`
 `;
 
 export const SunMoonIcon = styled.img`
-  width: 22.34px;
-  height: 24px;
   margin-right: ${toRem(16)};
+  ${widthHeight(22.34, 24)}
 `;
 
 export const ClockWrapper = styled.div`

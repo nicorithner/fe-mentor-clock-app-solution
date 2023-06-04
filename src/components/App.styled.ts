@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { toRem, widthHeight } from "../globals/mixins";
 
 type Props = {
-  border: string;
   height: number;
   display: string;
 };
@@ -20,10 +19,23 @@ export const SectionWrapper = styled.section<Props>`
   display: ${(props) => props.display};
   justify-content: space-between;
   color: ${(props) => props.theme.color.clockGroup};
-  border: 2px ${(props) => props.border} solid;
   padding-top: ${toRem(56)};
   padding-bottom: ${toRem(90)}
   padding-left: ${toRem(165)};
   padding-right: ${toRem(165)};
   height: ${(props) => toRem(props.height)};
+`;
+
+export const ExtraInfoWrapper = styled.section<Props>`
+  background: ${(props) => props.theme.background};
+  height: ${(props) => toRem(props.height)};
+  display: ${(props) => props.display};
+
+  justify-content: space-between;
+  color: ${(props) => props.theme.color.clockGroup};
+  padding-top: ${toRem(56)};
+  padding-bottom: ${toRem(90)}
+  padding-left: ${toRem(165)};
+  padding-right: ${toRem(165)};
+
 `;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { DAYTHEME, NIGHTTHEME } from "../globals/constants";
 import {
@@ -11,15 +11,29 @@ import { ExtraInfo } from "./extraInfo/ExtraInfo";
 import { Quote } from "./quote/Quote";
 import { TimeSection } from "./timeSection/TimeSection";
 import { ToggleButton } from "./toggleButton/ToggleButton";
+import { WorldTimeAPI } from "../apis/worldTimeAPI";
 
 function App() {
   const [detailDisplay, setDetailDisplay] = useState("flex");
   const [quoteDisplay, setQuoteDisplay] = useState("none");
+  const [greeting, setGreeting] = useState("GOOD NIGHT");
+
+  useEffect(() => {
+    WorldTimeAPI.get().then((data) => {
+      setGreeting(data.greeting);
+    });
+  });
+
+  function assignTheme(greeting: string) {
+    return greeting === "GOOD MORNING" || greeting === "GOOD AFTERNOON"
+      ? DAYTHEME
+      : NIGHTTHEME;
+  }
 
   return (
-    <ThemeProvider theme={NIGHTTHEME}>
+    <ThemeProvider theme={assignTheme(greeting)}>
       <AppWrapper>
-      <AppOverlay />
+        <AppOverlay />
         <SectionWrapper height={400} display={quoteDisplay}>
           <Quote />
         </SectionWrapper>

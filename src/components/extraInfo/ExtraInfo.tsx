@@ -6,6 +6,7 @@ import {
   Label,
   VerticalDivider,
 } from "./ExtraInfo.styled";
+import { WorldTimeAPI } from "../../apis/worldTimeAPI";
 
 export const ExtraInfo = () => {
   return (

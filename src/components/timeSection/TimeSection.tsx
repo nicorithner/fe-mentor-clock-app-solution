@@ -19,7 +19,7 @@ export const TimeSection = () => {
   const [timeZoneCode, setTimeZoneCode] = useState("MST");
   const [timeZone, setTimeZone] = useState("America/Chicago");
   const [greeting, setGreeting] = useState("GOOD MORNING");
-  const icon: string = greeting == "GOOD MORNING" ? iconSun : iconMoon;
+  const icon: string = greeting === "GOOD MORNING" ? iconSun : iconMoon;
 
   useEffect(() => {
     WorldTimeAPI.get().then((data) => {

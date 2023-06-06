@@ -14,9 +14,9 @@ import { ToggleButton } from "./toggleButton/ToggleButton";
 import { WorldTimeAPI } from "../apis/worldTimeAPI";
 
 function App() {
-  const [detailDisplay, setDetailDisplay] = useState("flex");
-  const [quoteDisplay, setQuoteDisplay] = useState("none");
-  const [greeting, setGreeting] = useState("GOOD NIGHT");
+  const [detailDisplay, setDetailDisplay] = useState<string>("flex");
+  const [quoteDisplay, setQuoteDisplay] = useState<string>("none");
+  const [greeting, setGreeting] = useState<string>("GOOD NIGHT");
 
   useEffect(() => {
     WorldTimeAPI.get().then((data) => {

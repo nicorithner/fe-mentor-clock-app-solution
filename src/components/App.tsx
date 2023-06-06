@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { TimeContext, useTimeContext } from "../globals/contexts/TimeContext";
 import { ThemeProvider } from "styled-components";
 import { DAYTHEME, NIGHTTHEME } from "../globals/constants";
 import {
@@ -14,14 +15,26 @@ import { ToggleButton } from "./toggleButton/ToggleButton";
 import { WorldTimeAPI } from "../apis/worldTimeAPI";
 
 function App() {
-  const [detailDisplay, setDetailDisplay] = useState<string>("flex");
-  const [quoteDisplay, setQuoteDisplay] = useState<string>("none");
+  const { displayStateContext } = useTimeContext();
+  const [detailDisplay, setDetailDisplay] = useState<string>("none");
+  const [quoteDisplay, setQuoteDisplay] = useState<string>("flex");
   const [greeting, setGreeting] = useState<string>("GOOD NIGHT");
 
   useEffect(() => {
     WorldTimeAPI.get().then((data) => {
       setGreeting(data.greeting);
     });
+
+    switch (displayStateContext) {
+      case true:
+        setDetailDisplay("flex");
+        setQuoteDisplay("none");
+        break;
+      default:
+        setDetailDisplay("none");
+        setQuoteDisplay("flex");
+        break;
+    }
   });
 
   function assignTheme(greeting: string) {
@@ -32,6 +45,7 @@ function App() {
 
   return (
     <ThemeProvider theme={assignTheme(greeting)}>
+      <TimeContext.Provider value={{displayStateContext}}>
       <AppWrapper>
         <AppOverlay />
         <SectionWrapper height={400} display={quoteDisplay}>
@@ -45,6 +59,7 @@ function App() {
           <ExtraInfo />
         </ExtraInfoWrapper>
       </AppWrapper>
+      </TimeContext.Provider>
     </ThemeProvider>
   );
 }

@@ -9,11 +9,11 @@ export const WorldTimeAPI = {
 
     const data = {
       timeZoneCode: response.data.abbreviation,
-      timeZone: response.data.timeZone,
+      timeZone: response.data.timezone,
       cityAndCountry: formatLocation(response.data.timezone),
       dayOfYear: response.data.day_of_year,
       dayOfWeek: response.data.day_of_week,
-      weekNumber: response.data.weekNumber,
+      weekNumber: response.data.week_number,
       greeting: formatGreeting(response.data.datetime),
     };
     return data;

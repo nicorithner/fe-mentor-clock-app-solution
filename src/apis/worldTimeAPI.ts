@@ -21,13 +21,13 @@ export const WorldTimeAPI = {
 };
 
 function formatGreeting(dateTime: string): string {
-  const time: number = +dateTime.split("T")[1].slice(0, 1);
+  const time: string = dateTime.split("T")[1].slice(0, 2);
   switch (true) {
-    case (time >= 0 && time < 5) || time >= 21:
+    case (time >= "00" && time < "05") || time >= "21":
       return "GOOD NIGHT";
-    case time >= 5 && time < 12:
+    case time >= "05" && time < "12":
       return "GOOD MORNING";
-    case time >= 12 && time < 17:
+    case time >= "12" && time < "17":
       return "GOOD AFTERNOON";
     default:
       return "GOOD EVENING";
@@ -37,7 +37,7 @@ function formatGreeting(dateTime: string): string {
 function formatLocation(location: string): string {
   const locArray = location.split("/");
   const city = locArray[1].toUpperCase();
-  const country = locArray[0] == "America" ? "USA" : locArray[0].toUpperCase();
+  const country = locArray[0] === "America" ? "USA" : locArray[0].toUpperCase();
 
   return `IN ${city}, ${country}`;
 }

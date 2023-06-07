@@ -8,12 +8,18 @@ import {
 import arrowIconDown from "../../assets/desktop/icon-arrow-down.svg";
 import arrowIconUp from "../../assets/desktop/icon-arrow-up.svg";
 import { useState } from "react";
+import {
+  useDisplayInfoContext,
+} from "../../globals/contexts/DisplayInfoContext";
 
 export const ToggleButton = () => {
-  const [arrowIcon, setArrowIcon] = useState(arrowIconUp);
-  const [content, setContent] = useState("MORE");
+  const { displayExtraInfo, setDisplayExtraInfo } = useDisplayInfoContext();
+  const [arrowIcon, setArrowIcon] = useState<string>(arrowIconUp);
+  const [content, setContent] = useState<string>("MORE");
 
-  const toggleButton = () => {
+
+  const handleToggleDisplay = () => {
+    setDisplayExtraInfo(!displayExtraInfo);
     arrowIcon == arrowIconUp
       ? setArrowIcon(arrowIconDown)
       : setArrowIcon(arrowIconUp);
@@ -21,13 +27,13 @@ export const ToggleButton = () => {
   };
 
   return (
-    <ButtonSectionWrapper>
-      <Button onClick={toggleButton}>
-        <ButtonText>{content}</ButtonText>
-        <BttnArrowCircle>
-          <ButtonArrow src={arrowIcon} />
-        </BttnArrowCircle>
-      </Button>
-    </ButtonSectionWrapper>
+      <ButtonSectionWrapper>
+        <Button onClick={handleToggleDisplay}>
+          <ButtonText>{content}</ButtonText>
+          <BttnArrowCircle>
+            <ButtonArrow src={arrowIcon} />
+          </BttnArrowCircle>
+        </Button>
+      </ButtonSectionWrapper>
   );
 };

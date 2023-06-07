@@ -16,9 +16,9 @@ import { useEffect, useState } from "react";
 
 export const TimeSection = () => {
   const [cityAndCountry, setCityAndCountry] = useState<string>("CHICAGO, USA");
-  const [timeZoneCode, setTimeZoneCode] = useState("MST");
-  const [timeZone, setTimeZone] = useState("America/Chicago");
-  const [greeting, setGreeting] = useState("GOOD MORNING");
+  const [timeZoneCode, setTimeZoneCode] = useState<string>("MST");
+  const [timeZone, setTimeZone] = useState<string>("America/Chicago");
+  const [greeting, setGreeting] = useState<string>("GOOD MORNING");
   const icon: string = greeting === "GOOD MORNING" ? iconSun : iconMoon;
 
   useEffect(() => {

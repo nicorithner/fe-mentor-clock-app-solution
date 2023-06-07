@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { DisplayInfoContext } from "../globals/contexts/DisplayInfoContext";
+
 import { ThemeProvider } from "styled-components";
 import { DAYTHEME, NIGHTTHEME } from "../globals/constants";
 import {
@@ -14,14 +16,28 @@ import { ToggleButton } from "./toggleButton/ToggleButton";
 import { WorldTimeAPI } from "../apis/worldTimeAPI";
 
 function App() {
-  const [detailDisplay, setDetailDisplay] = useState("flex");
-  const [quoteDisplay, setQuoteDisplay] = useState("none");
-  const [greeting, setGreeting] = useState("GOOD NIGHT");
+  const [displayExtraInfo, setDisplayExtraInfo] = useState(false);
+  const value = { displayExtraInfo, setDisplayExtraInfo };
+
+  const [detailDisplay, setDetailDisplay] = useState<string>("none");
+  const [quoteDisplay, setQuoteDisplay] = useState<string>("flex");
+  const [greeting, setGreeting] = useState<string>("GOOD NIGHT");
 
   useEffect(() => {
     WorldTimeAPI.get().then((data) => {
       setGreeting(data.greeting);
     });
+
+    switch (displayExtraInfo) {
+      case true:
+        setDetailDisplay("flex");
+        setQuoteDisplay("none");
+        break;
+      default:
+        setDetailDisplay("none");
+        setQuoteDisplay("flex");
+        break;
+    }
   });
 
   function assignTheme(greeting: string) {
@@ -32,19 +48,21 @@ function App() {
 
   return (
     <ThemeProvider theme={assignTheme(greeting)}>
-      <AppWrapper>
-        <AppOverlay />
-        <SectionWrapper height={400} display={quoteDisplay}>
-          <Quote />
-        </SectionWrapper>
-        <SectionWrapper height={400} display={"flex"}>
-          <TimeSection />
-          <ToggleButton />
-        </SectionWrapper>
-        <ExtraInfoWrapper height={400} display={detailDisplay}>
-          <ExtraInfo />
-        </ExtraInfoWrapper>
-      </AppWrapper>
+      <DisplayInfoContext.Provider value={value}>
+        <AppWrapper>
+          <AppOverlay />
+          <SectionWrapper height={400} display={quoteDisplay}>
+            <Quote />
+          </SectionWrapper>
+          <SectionWrapper height={400} display={"flex"}>
+            <TimeSection />
+            <ToggleButton />
+          </SectionWrapper>
+          <ExtraInfoWrapper height={400} display={detailDisplay}>
+            <ExtraInfo />
+          </ExtraInfoWrapper>
+        </AppWrapper>
+      </DisplayInfoContext.Provider>
     </ThemeProvider>
   );
 }

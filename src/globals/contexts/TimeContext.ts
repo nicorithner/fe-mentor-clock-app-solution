@@ -1,9 +1,11 @@
 import { createContext, useContext } from "react";
 
 export type TimeDisplayState = {
-  displayStateContext: boolean;
+  displayExtraInfo: boolean;
+  setDisplayExtraInfo: (c: boolean) => void;
 };
 export const TimeContext = createContext<TimeDisplayState>({
-  displayStateContext: false,
+  displayExtraInfo: false,
+  setDisplayExtraInfo: () => {},
 });
 export const useTimeContext = () => useContext(TimeContext);

@@ -24,4 +24,8 @@ export const Author = styled.h5`
 export const Icon = styled.img`
   cursor: pointer;
   ${widthHeight(17, 17)}
+
+  &:active {
+    transform: rotate(270deg);
+  }
 `;

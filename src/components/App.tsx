@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { TimeContext, useTimeContext } from "../globals/contexts/TimeContext";
+
 import { ThemeProvider } from "styled-components";
 import { DAYTHEME, NIGHTTHEME } from "../globals/constants";
 import {
@@ -15,7 +16,9 @@ import { ToggleButton } from "./toggleButton/ToggleButton";
 import { WorldTimeAPI } from "../apis/worldTimeAPI";
 
 function App() {
-  const { displayStateContext } = useTimeContext();
+  const [displayExtraInfo, setDisplayExtraInfo] = useState(false);
+  const value = { displayExtraInfo, setDisplayExtraInfo };
+
   const [detailDisplay, setDetailDisplay] = useState<string>("none");
   const [quoteDisplay, setQuoteDisplay] = useState<string>("flex");
   const [greeting, setGreeting] = useState<string>("GOOD NIGHT");
@@ -25,7 +28,7 @@ function App() {
       setGreeting(data.greeting);
     });
 
-    switch (displayStateContext) {
+    switch (displayExtraInfo) {
       case true:
         setDetailDisplay("flex");
         setQuoteDisplay("none");
@@ -45,20 +48,20 @@ function App() {
 
   return (
     <ThemeProvider theme={assignTheme(greeting)}>
-      <TimeContext.Provider value={{displayStateContext}}>
-      <AppWrapper>
-        <AppOverlay />
-        <SectionWrapper height={400} display={quoteDisplay}>
-          <Quote />
-        </SectionWrapper>
-        <SectionWrapper height={400} display={"flex"}>
-          <TimeSection />
-          <ToggleButton />
-        </SectionWrapper>
-        <ExtraInfoWrapper height={400} display={detailDisplay}>
-          <ExtraInfo />
-        </ExtraInfoWrapper>
-      </AppWrapper>
+      <TimeContext.Provider value={value}>
+        <AppWrapper>
+          <AppOverlay />
+          <SectionWrapper height={400} display={quoteDisplay}>
+            <Quote />
+          </SectionWrapper>
+          <SectionWrapper height={400} display={"flex"}>
+            <TimeSection />
+            <ToggleButton />
+          </SectionWrapper>
+          <ExtraInfoWrapper height={400} display={detailDisplay}>
+            <ExtraInfo />
+          </ExtraInfoWrapper>
+        </AppWrapper>
       </TimeContext.Provider>
     </ThemeProvider>
   );

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { TimeContext, useTimeContext } from "../globals/contexts/TimeContext";
+import { DisplayInfoContext } from "../globals/contexts/DisplayInfoContext";
 
 import { ThemeProvider } from "styled-components";
 import { DAYTHEME, NIGHTTHEME } from "../globals/constants";
@@ -48,7 +48,7 @@ function App() {
 
   return (
     <ThemeProvider theme={assignTheme(greeting)}>
-      <TimeContext.Provider value={value}>
+      <DisplayInfoContext.Provider value={value}>
         <AppWrapper>
           <AppOverlay />
           <SectionWrapper height={400} display={quoteDisplay}>
@@ -62,7 +62,7 @@ function App() {
             <ExtraInfo />
           </ExtraInfoWrapper>
         </AppWrapper>
-      </TimeContext.Provider>
+      </DisplayInfoContext.Provider>
     </ThemeProvider>
   );
 }

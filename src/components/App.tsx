@@ -22,10 +22,26 @@ function App() {
   const [detailDisplay, setDetailDisplay] = useState<string>("none");
   const [quoteDisplay, setQuoteDisplay] = useState<string>("flex");
   const [greeting, setGreeting] = useState<string>("GOOD NIGHT");
+  const [currentTimeZone, setCurrentTimeZone] =
+    useState<string>("Europe/London");
+  const [dayOfYear, setDayOfYear] = useState<number>(295);
+  const [dayOfWeek, setDayOfWeek] = useState<number>(5);
+  const [weekNumber, setWeekNumber] = useState<number>(42);
+  const [cityAndCountry, setCityAndCountry] = useState<string>("CHICAGO, USA");
+  const [timeZoneCode, setTimeZoneCode] = useState<string>("MST");
+  const [timeZone, setTimeZone] = useState<string>("America/Chicago");
 
   useEffect(() => {
     WorldTimeAPI.get().then((data) => {
       setGreeting(data.greeting);
+      setCurrentTimeZone(data.timeZone);
+      setDayOfYear(data.dayOfYear);
+      setDayOfWeek(data.dayOfWeek);
+      setWeekNumber(data.weekNumber);
+      setCityAndCountry(data.cityAndCountry);
+      setTimeZoneCode(data.timeZoneCode);
+      setGreeting(data.greeting);
+      setTimeZone(data.timeZone);
     });
 
     switch (displayExtraInfo) {
@@ -55,11 +71,21 @@ function App() {
             <Quote />
           </SectionWrapper>
           <SectionWrapper height={400} display={"flex"}>
-            <TimeSection />
+            <TimeSection
+              greeting={greeting}
+              cityAndCountry={cityAndCountry}
+              timeZoneCode={timeZoneCode}
+              timeZone={timeZone}
+            />
             <ToggleButton />
           </SectionWrapper>
           <ExtraInfoWrapper height={400} display={detailDisplay}>
-            <ExtraInfo />
+            <ExtraInfo
+              currentTimeZone={currentTimeZone}
+              dayOfYear={dayOfYear}
+              dayOfWeek={dayOfWeek}
+              weekNumber={weekNumber}
+            />
           </ExtraInfoWrapper>
         </AppWrapper>
       </DisplayInfoContext.Provider>

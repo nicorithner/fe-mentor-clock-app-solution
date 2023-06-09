@@ -10,25 +10,20 @@ import {
 } from "./TimeSection.styled";
 import iconMoon from "../../assets/desktop/icon-moon.svg";
 import iconSun from "../../assets/desktop/icon-sun.svg";
-import { WorldTimeAPI } from "../../apis/worldTimeAPI";
 import Clock from "react-live-clock";
-import { useEffect, useState } from "react";
 
-export const TimeSection = () => {
-  const [cityAndCountry, setCityAndCountry] = useState<string>("CHICAGO, USA");
-  const [timeZoneCode, setTimeZoneCode] = useState<string>("MST");
-  const [timeZone, setTimeZone] = useState<string>("America/Chicago");
-  const [greeting, setGreeting] = useState<string>("GOOD MORNING");
+export const TimeSection = ({
+  greeting,
+  cityAndCountry,
+  timeZoneCode,
+  timeZone,
+}: {
+  greeting: string;
+  cityAndCountry: string;
+  timeZoneCode: string;
+  timeZone: string;
+}) => {
   const icon: string = greeting === "GOOD MORNING" ? iconSun : iconMoon;
-
-  useEffect(() => {
-    WorldTimeAPI.get().then((data) => {
-      setCityAndCountry(data.cityAndCountry);
-      setTimeZoneCode(data.timeZoneCode);
-      setGreeting(data.greeting);
-      setTimeZone(data.timeZone);
-    });
-  }, []);
 
   return (
     <TimeInfoWrapper>

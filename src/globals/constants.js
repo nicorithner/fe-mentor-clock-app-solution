@@ -7,9 +7,9 @@ const white = "hsl(0,0%,100%)";
 const gray = "hsla(0, 0%, 40%, 1)";
 const darkGray = "hsla(0, 0%, 19%, 1)";
 
-const blackTranparency = "hsla(0,0%,0%, .9)";
+const blackTranparency = "hsla(0,0%,0%, .5)";
 const blackHighTranparency = "hsla(0,0%,0%, .5)";
-const whiteTranparency = "hsla(0,0%,100%, .9)";
+const whiteTranparency = "hsla(0,0%,100%, .5)";
 const whiteHighTranparency = "hsla(0,0%,100%, .5)";
 
 export const DAYTHEME = {

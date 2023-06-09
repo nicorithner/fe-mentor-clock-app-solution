@@ -6,23 +6,18 @@ import {
   Label,
   VerticalDivider,
 } from "./ExtraInfo.styled";
-import { WorldTimeAPI } from "../../apis/worldTimeAPI";
-import { useEffect, useState } from "react";
 
-export const ExtraInfo = () => {
-  const [currentTimeZone, setCurrentTimeZone] = useState<string>("Europe/London");
-  const [dayOfYear, setDayOfYear] = useState<number>(295);
-  const [dayOfWeek, setDayOfWeek] = useState<number>(5);
-  const [weekNumber, setWeekNumber] = useState<number>(42);
-
-  useEffect(() => {
-    WorldTimeAPI.get().then((data) => {
-      setCurrentTimeZone(data.timeZone);
-      setDayOfYear(data.dayOfYear);
-      setDayOfWeek(data.dayOfWeek);
-      setWeekNumber(data.weekNumber);
-    });
-  });
+export const ExtraInfo = ({
+  currentTimeZone,
+  dayOfYear,
+  dayOfWeek,
+  weekNumber,
+}: {
+  currentTimeZone: string;
+  dayOfYear: number;
+  dayOfWeek: number;
+  weekNumber: number;
+}) => {
   return (
     <InfoSectionWrapper>
       <InfoColumn>

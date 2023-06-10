@@ -23,7 +23,10 @@ export const TimeSection = ({
   timeZoneCode: string;
   timeZone: string;
 }) => {
-  const icon: string = greeting === "GOOD MORNING" ? iconSun : iconMoon;
+  const icon: string =
+    greeting === "GOOD MORNING" || greeting === "GOOD AFTERNOON"
+      ? iconSun
+      : iconMoon;
 
   return (
     <TimeInfoWrapper>

@@ -54,7 +54,7 @@ function App() {
         setQuoteDisplay("flex");
         break;
     }
-  });
+  }, [displayExtraInfo]);
 
   function assignTheme(greeting: string) {
     return greeting === "GOOD MORNING" || greeting === "GOOD AFTERNOON"
@@ -67,7 +67,7 @@ function App() {
       <DisplayInfoContext.Provider value={value}>
         <AppWrapper>
           <AppOverlay />
-          <SectionWrapper height={400} display={quoteDisplay}>
+          <SectionWrapper id="quote" height={400} display={quoteDisplay}>
             <Quote />
           </SectionWrapper>
           <SectionWrapper height={400} display={"flex"}>

@@ -1,5 +1,9 @@
 import daytimeImage from "../assets/desktop/bg-image-daytime.jpg";
+import daytimeImageMobile from "../assets/mobile/bg-image-daytime.jpg";
+import daytimeImageTablet from "../assets/tablet/bg-image-daytime.jpg";
 import nightTimeImage from "../assets/desktop/bg-image-nighttime.jpg";
+import nightTimeImageMobile from "../assets/mobile/bg-image-nighttime.jpg";
+import nightTimeImageTablet from "../assets/tablet/bg-image-nighttime.jpg";
 
 const black = "hsl(0,0%,0%)";
 const nightRider = "hsl(0,0%,19%)";
@@ -14,6 +18,8 @@ const whiteHighTranparency = "hsla(0,0%,100%, .5)";
 
 export const DAYTHEME = {
   backgroundImage: `url(${daytimeImage})`,
+  backgroundImageMobile: `url(${daytimeImageMobile})`,
+  backgroundImageTablet: `url(${daytimeImageTablet})`,
   background: `${whiteTranparency}`,
   overlay: `${blackHighTranparency}`,
   color: {
@@ -30,6 +36,8 @@ export const DAYTHEME = {
 };
 export const NIGHTTHEME = {
   backgroundImage: `url(${nightTimeImage})`,
+  backgroundImageMobile: `url(${nightTimeImageMobile})`,
+  backgroundImageTablet: `url(${nightTimeImageTablet})`,
   background: `${blackTranparency}`,
   overlay: `${blackHighTranparency}`,
   color: {

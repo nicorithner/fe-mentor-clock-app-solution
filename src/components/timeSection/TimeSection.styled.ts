@@ -26,16 +26,23 @@ export const ClockWrapper = styled.div`
 `;
 
 export const Greeting = styled.h4`
+  ${(props) => {
+    if (props.id === "short-greeting") return `display: none;`;
+  }}
   @media only screen and (max-width: 400px) {
+    ${(props) => {
+      if (props.id === "long-greeting") return `display: none;`;
+      if (props.id === "short-greeting") return `display: flex;`;
+    }}
     font-size: ${toRem(16)};
     line-height: ${toRem(24)};
     letter-spacing: ${toRem(3)};
   }
 `;
+
 export const Time = styled.h1`
   @media only screen and (max-width: 400px) {
     font-size: ${toRem(100)};
-    /* line-height: ${toRem(90)}; */
     letter-spacing: ${toRem(-2.5)};
   }
 `;

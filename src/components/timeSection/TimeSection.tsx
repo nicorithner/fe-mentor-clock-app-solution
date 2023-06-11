@@ -32,7 +32,8 @@ export const TimeSection = ({
     <TimeInfoWrapper>
       <GreetingWrapper>
         <SunMoonIcon src={icon} />
-        <Greeting>{greeting}, IT’S CURRENTLY</Greeting>
+        <Greeting id="long-greeting">{greeting}, IT’S CURRENTLY</Greeting>
+        <Greeting id="short-greeting">{greeting}</Greeting>
       </GreetingWrapper>
       <ClockWrapper>
         <Time>

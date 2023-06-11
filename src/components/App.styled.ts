@@ -21,6 +21,13 @@ export const AppWrapper = styled.main`
     max-width: ${toRem(375)};
     height: 100vh;
   }
+
+  @media only screen and (min-width: 400px) and (max-width: 800px) {
+    background-image: ${(props) => props.theme.backgroundImageTablet};
+    ${widthHeight(768, 1024)};
+    max-width: ${toRem(768)};
+    max-height: ${toRem(1024)};
+  }
 `;
 
 export const AppOverlay = styled.div`
@@ -34,6 +41,12 @@ export const AppOverlay = styled.div`
 
   @media only screen and (max-width: 400px) {
     max-width: ${toRem(375)};
+  }
+
+  @media only screen and (min-width: 400px) and (max-width: 800px) {
+    ${widthHeight(768, 1024)};
+    max-width: ${toRem(768)};
+    max-height: ${toRem(1024)};
   }
 `;
 
@@ -54,6 +67,15 @@ export const SectionWrapper = styled.section<Props>`
     ${(props) => {
       if (props.id === "quote") return `min-height: ${toRem(250)};`;
     }}
+  }
+
+  @media only screen and (min-width: 400px) and (max-width: 800px) {
+    flex-direction: column;
+    padding: ${toRem(64)};
+    ${(props) => {
+      if (props.id === "quote") return `flex-grow: 1;`;
+    }}
+    flex-grow: 2;
   }
 `;
 

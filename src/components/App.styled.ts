@@ -10,20 +10,31 @@ export const AppWrapper = styled.main`
   background-image: ${(props) => props.theme.backgroundImage};
   display: flex;
   position: relative;
+  justify-content: space-between;
   flex-direction: column;
   ${widthHeight(1440, 800)}
   max-width: ${toRem(1440)};
   max-height: ${toRem(800)};
+
+  @media only screen and (max-width: 400px) {
+    background-image: ${(props) => props.theme.backgroundImageMobile};
+    max-width: ${toRem(375)};
+    height: 100vh;
+  }
 `;
 
 export const AppOverlay = styled.div`
   position: absolute;
-  width: 1440px;
-  height: 800px;
+  width: ${toRem(1440)};
+  height: ${toRem(800)};
   background-color: ${(props) => props.theme.overlay};
   top: 0;
   left: 0;
   z-index: 2;
+
+  @media only screen and (max-width: 400px) {
+    max-width: ${toRem(375)};
+  }
 `;
 
 export const SectionWrapper = styled.section<Props>`
@@ -31,11 +42,19 @@ export const SectionWrapper = styled.section<Props>`
   justify-content: space-between;
   color: ${(props) => props.theme.color.clockGroup};
   padding-top: ${toRem(56)};
-  padding-bottom: ${toRem(90)}
+  padding-bottom: ${toRem(90)};
   padding-left: ${toRem(165)};
   padding-right: ${toRem(165)};
-  height: ${(props) => toRem(props.height)};
+  min-height: ${(props) => toRem(props.height)};
   z-index: 3;
+
+  @media only screen and (max-width: 400px) {
+    flex-direction: column;
+    padding: ${toRem(32)} ${toRem(24)};
+    ${(props) => {
+      if (props.id === "quote") return `min-height: ${toRem(250)};`;
+    }}
+  }
 `;
 
 export const ExtraInfoWrapper = styled.section<Props>`
@@ -46,8 +65,12 @@ export const ExtraInfoWrapper = styled.section<Props>`
   justify-content: space-between;
   color: ${(props) => props.theme.color.clockGroup};
   padding-top: ${toRem(56)};
-  padding-bottom: ${toRem(90)}
+  padding-bottom: ${toRem(90)};
   padding-left: ${toRem(165)};
   padding-right: ${toRem(165)};
   z-index: 3;
+
+  @media only screen and (max-width: 400px) {
+    padding-left: ${toRem(24)};
+  }
 `;

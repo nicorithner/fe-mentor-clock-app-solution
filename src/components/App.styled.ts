@@ -72,10 +72,13 @@ export const SectionWrapper = styled.section<Props>`
   @media only screen and (min-width: 400px) and (max-width: 800px) {
     flex-direction: column;
     padding: ${toRem(64)};
+    flex-grow: 2;
     ${(props) => {
       if (props.id === "quote") return `flex-grow: 1;`;
     }}
-    flex-grow: 2;
+    ${(props) => {
+      if (props.id === "time-section") return `justify-content: space-evenly;`;
+    }}
   }
 `;
 

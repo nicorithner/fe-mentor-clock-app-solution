@@ -71,6 +71,6 @@ export const ExtraInfoWrapper = styled.section<Props>`
   z-index: 3;
 
   @media only screen and (max-width: 400px) {
-    padding-left: ${toRem(24)};
+    padding: ${toRem(48)} ${toRem(16)};
   }
 `;

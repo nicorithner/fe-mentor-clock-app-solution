@@ -31,6 +31,10 @@ export const InfoSegment = styled(BaseSegment)`
     max-width: ${toRem(323)};
     height: auto;
   }
+
+  @media only screen and (min-width: 400px) and (max-width: 800px) {
+    justify-content: space-around;
+  }
 `;
 
 export const VerticalDivider = styled.div`
@@ -41,7 +45,12 @@ export const VerticalDivider = styled.div`
   @media only screen and (max-width: 400px) {
     display: none;
   }
+
+  @media only screen and (min-width: 400px) and (max-width: 800px) {
+    display: none;
+  }
 `;
+
 export const Label = styled.h6`
   color: ${(props) => props.theme.color.label};
 
@@ -50,11 +59,23 @@ export const Label = styled.h6`
     line-height: ${toRem(28)};
     letter-spacing: ${toRem(2)};
   }
+
+  @media only screen and (min-width: 400px) and (max-width: 800px) {
+    font-size: ${toRem(14)};
+    line-height: ${toRem(28)};
+    letter-spacing: ${toRem(2.6)};
+  }
 `;
+
 export const Info = styled.h2`
   color: ${(props) => props.theme.color.info};
   @media only screen and (max-width: 400px) {
     font-size: ${toRem(20)};
     line-height: ${toRem(24)};
+  }
+
+  @media only screen and (min-width: 400px) and (max-width: 800px) {
+    font-size: ${toRem(40)};
+    line-height: ${toRem(48)};
   }
 `;

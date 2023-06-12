@@ -9,6 +9,11 @@ export const TimeInfoWrapper = styled.section`
   @media only screen and (max-width: 400px) {
     width: fit-content;
   }
+
+  @media only screen and (min-width: 400px) and (max-width: 800px) {
+    flex-grow: 0.5;
+    justify-content: space-evenly;
+  }
 `;
 
 export const GreetingWrapper = styled.div`
@@ -38,12 +43,24 @@ export const Greeting = styled.h4`
     line-height: ${toRem(24)};
     letter-spacing: ${toRem(3)};
   }
+
+  @media only screen and (min-width: 400px) and (max-width: 800px) {
+    font-size: ${toRem(18)};
+    line-height: ${toRem(28)};
+    letter-spacing: ${toRem(3.6)};
+  }
 `;
 
 export const Time = styled.h1`
   @media only screen and (max-width: 400px) {
     font-size: ${toRem(100)};
     letter-spacing: ${toRem(-2.5)};
+  }
+
+  @media only screen and (min-width: 400px) and (max-width: 800px) {
+    font-size: ${toRem(175)};
+    line-height: ${toRem(175)};
+    letter-spacing: ${toRem(-4.4)};
   }
 `;
 
@@ -60,6 +77,11 @@ export const TimeZone = styled.p`
     font-size: ${toRem(16)};
     line-height: ${toRem(80)};
   }
+
+  @media only screen and (min-width: 400px) and (max-width: 800px) {
+    font-size: ${toRem(32)};
+    line-height: ${toRem(76)};
+  }
 `;
 
 export const CityCountry = styled.h3`
@@ -67,5 +89,10 @@ export const CityCountry = styled.h3`
     font-size: ${toRem(16)};
     line-height: ${toRem(28)};
     letter-spacing: ${toRem(3)};
+  }
+
+  @media only screen and (min-width: 400px) and (max-width: 800px) {
+    font-size: ${toRem(18)};
+    line-height: ${toRem(24)};
   }
 `;

@@ -70,7 +70,7 @@ function App() {
           <SectionWrapper id="quote" height={400} display={quoteDisplay}>
             <Quote />
           </SectionWrapper>
-          <SectionWrapper height={400} display={"flex"}>
+          <SectionWrapper id="time-section" height={400} display={"flex"}>
             <TimeSection
               greeting={greeting}
               cityAndCountry={cityAndCountry}

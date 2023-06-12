@@ -28,6 +28,12 @@ export const QuoteText = styled.p`
     font-size: ${toRem(12)};
     line-height: ${toRem(22)};
   }
+
+  @media only screen and (min-width: 400px) and (max-width: 800px) {
+    width: ${toRem(540)};
+    font-size: ${toRem(18)};
+    line-height: ${toRem(28)};
+  }
 `;
 
 export const Author = styled.h5`
@@ -35,8 +41,13 @@ export const Author = styled.h5`
   text-align: left;
 
   @media only screen and (max-width: 400px) {
-    margin-top: ${toRem(8)};
-    font-size: ${toRem(12)};
+    margin-top: ${toRem(12)};
+    font-size: ${toRem(22)};
+  }
+
+  @media only screen and (min-width: 400px) and (max-width: 800px) {
+    font-size: ${toRem(18)};
+    line-height: ${toRem(28)};
   }
 `;
 

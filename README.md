@@ -1,14 +1,14 @@
 # Frontend Mentor - Clock App Solution
 
--This is a solution to the [Clock app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [Clock app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Links](#links)
-  - [Built with](#built-with)
-  - [Screenshot](#screenshot)
+- [The challenge](#the-challenge)
+- [Links](#links)
+- [Built with](#built-with)
+- [Screenshot](#screenshot)
 
 ## Overview
 
@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [github page](https://nicorithner.github.io/fem-challenge-results-summary-component/)
+- Live Site URL: [github page](https://nicorithner.github.io/fe-mentor-clock-app-solution/)
 
 ### Built with
 

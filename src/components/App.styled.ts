@@ -72,12 +72,9 @@ export const SectionWrapper = styled.section<Props>`
   @media only screen and (min-width: 400px) and (max-width: 800px) {
     flex-direction: column;
     padding: ${toRem(64)};
-    flex-grow: 2;
+    flex-grow: 1;
     ${(props) => {
       if (props.id === "quote") return `flex-grow: 1;`;
-    }}
-    ${(props) => {
-      if (props.id === "time-section") return `justify-content: space-evenly;`;
     }}
   }
 `;
@@ -97,5 +94,11 @@ export const ExtraInfoWrapper = styled.section<Props>`
 
   @media only screen and (max-width: 400px) {
     padding: ${toRem(48)} ${toRem(16)};
+  }
+
+  @media only screen and (min-width: 400px) and (max-width: 800px) {
+    padding-left: ${toRem(64)};
+    padding-top: ${toRem(120)};
+    height: ${toRem(440)};
   }
 `;

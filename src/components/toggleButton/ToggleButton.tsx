@@ -20,10 +20,10 @@ export const ToggleButton = () => {
 
   const handleToggleDisplay = () => {
     setDisplayExtraInfo(!displayExtraInfo);
-    arrowIcon == arrowIconUp
+    arrowIcon === arrowIconUp
       ? setArrowIcon(arrowIconDown)
       : setArrowIcon(arrowIconUp);
-    content == "MORE" ? setContent("LESS") : setContent("MORE");
+    content === "MORE" ? setContent("LESS") : setContent("MORE");
   };
 
   return (

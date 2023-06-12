@@ -11,6 +11,7 @@ export const Button = styled.button`
   justify-content: center;
   ${widthHeight(146, 56)}
   border-radius: 28px;
+  border: none;
   display: flex;
   justify-content: space-between;
   align-items: center;

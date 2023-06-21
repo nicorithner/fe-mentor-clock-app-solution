@@ -3,7 +3,7 @@ import axios from "axios";
 export const WorldTimeAPI = {
   get: async function () {
     const response = await axios.request({
-      url: "http://worldtimeapi.org/api/ip",
+      url: "https://worldtimeapi.org/api/ip",
       method: "GET",
     });
 
